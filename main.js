@@ -21,7 +21,11 @@ const petsData = [
   }
 ];
 
-document.getElementById("app").innerHTML = `Hello, two plus two equas ${2 + 2} and it always will.
-<p> hi </p>
-<p>hello</p>
+// document.getElementById("app").innerHTML = `Hello, two plus two equas ${2 + 2} and it always will.
+// <p> hi </p>
+// <p>hello</p>
+// `
+
+document.getElementById("app").innerHTML = `
+<h1 class="app-title">Pets (${petsData.length} results)</h1>
 `
