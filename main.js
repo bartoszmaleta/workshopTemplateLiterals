@@ -37,12 +37,11 @@ function age(birthYear) {
   }
 }
 
-function foods() {
+function foods(petFavFoods) {
   return `
     <h4>Favourite Foods</h4>
     <ul class="foods-list">
-      <li>food 1</li>
-      <li>food 2</li>
+      ${petFavFoods}
     </ul>
   `
 }
@@ -53,7 +52,7 @@ function petTemplate(pet) {
     <img class="pet-photo" src="${pet.photo}">
     <h2 class="pet-name">${pet.name} <span class="species">(${pet.species})</span></h2>
     <p><strong>Age: ${age(pet.birthYear)}</strong></p>
-    ${foods()}
+    ${pet.favFoods ? foods(pet.favFoods) : ''}
   </div>
   `
 }
