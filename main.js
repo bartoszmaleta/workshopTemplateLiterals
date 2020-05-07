@@ -37,13 +37,23 @@ function age(birthYear) {
   }
 }
 
+// function foods(petFavFoods) {
+//   return `
+//     <h4>Favourite Foods</h4>
+//     <ul class="foods-list">
+//       ${petFavFoods.map(function(food) {
+//         return `<li>${food}</li>`
+//       }).join('')}
+//     </ul>
+//   `
+// }
+
+// ANOTHER OPTION
 function foods(petFavFoods) {
   return `
     <h4>Favourite Foods</h4>
     <ul class="foods-list">
-      ${petFavFoods.map(function(food) {
-        return `<li>${food}</li>`
-      }).join('')}
+      ${petFavFoods.map(food => `<li>${food}</li>`).join('')}
     </ul>
   `
 }
