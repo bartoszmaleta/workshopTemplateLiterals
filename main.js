@@ -41,7 +41,9 @@ function foods(petFavFoods) {
   return `
     <h4>Favourite Foods</h4>
     <ul class="foods-list">
-      ${petFavFoods}
+      ${petFavFoods.map(function(food) {
+        return `<li>${food}</li>`
+      }).join('')}
     </ul>
   `
 }
