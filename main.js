@@ -86,3 +86,10 @@ function clickHandler(event) {
   alert('qweqwe');
   console.log('button is clicked');
 }
+
+function inputKeyUp(e) {
+  if (e.key === 'Enter') {
+    alert('Enter clicked');
+      // enter has been pressed
+  }
+}
