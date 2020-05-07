@@ -74,3 +74,15 @@ document.getElementById("app").innerHTML = `
 ${petsData.map(petTemplate).join('')}
 <p class="footer">These ${petsData.length} pets were added recently. Check back soon for updates.</p>
 `
+
+let elements = document.querySelectorAll('.pet-photo');
+for (element of elements) {
+  element.addEventListener('click', clickHandler);
+}
+
+function clickHandler(event) {
+  prompt('qweqwe');
+
+  alert('qweqwe');
+  console.log('button is clicked');
+}
