@@ -61,7 +61,7 @@ function foods(petFavFoods) {
 function petTemplate(pet) {
   return `
   <div class="animal">
-    <img class="pet-photo" src="${pet.photo}">
+    <img id="p1" class="pet-photo" draggable="true" src="${pet.photo}">
     <h2 class="pet-name">${pet.name} <span class="species">(${pet.species})</span></h2>
     <p><strong>Age: ${age(pet.birthYear)}</strong></p>
     ${pet.favFoods ? foods(pet.favFoods) : ''}
@@ -70,7 +70,7 @@ function petTemplate(pet) {
 }
 
 document.getElementById("app").innerHTML = `
-<h1 class="app-title">Pets (${petsData.length} results)</h1>
+<h1 id="p1" draggable="true" class="app-title">Pets (${petsData.length} results)</h1>
 ${petsData.map(petTemplate).join('')}
 <p class="footer">These ${petsData.length} pets were added recently. Check back soon for updates.</p>
 `
@@ -93,3 +93,12 @@ function inputKeyUp(e) {
       // enter has been pressed
   }
 }
+
+function dragstart_handler(ev) {
+  ev.dataTransfer.setData("text/plain", ev.target.id);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const element = document.getElementById("p1");
+  element.addEventListener("dragstart", dragstart_handler);
+});
